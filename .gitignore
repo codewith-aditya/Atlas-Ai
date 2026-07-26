@@ -1,0 +1,28 @@
+# Environment variables (contains API keys - NEVER commit!)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+desktop.ini
+Thumbs.db
+
+# Atlas Specific Secrets and Memory
+materials/system.cfg
+materials/recover.txt
+materials/api_keys.txt
+materials/livekit_config.txt
+materials/weather_api_key.txt
+materials/PhoneNumbers.txt
+materials/*.json
+!materials/system.initialize

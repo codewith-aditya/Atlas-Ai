@@ -1,0 +1,35 @@
+# Core Dependencies
+PyQt5>=5.15.0
+pyautogui>=0.9.53
+psutil>=5.9.0
+requests>=2.28.0
+cryptography>=40.0.0
+
+# Speech & Audio
+pyttsx3>=2.90
+SpeechRecognition>=3.10.0
+pydub>=0.25.1
+pygame>=2.5.0
+livekit>=0.10.0
+livekit-api>=0.5.0
+
+# AI & Machine Learning
+openai>=1.0.0
+google-generativeai>=0.3.0
+groq>=0.4.0
+
+# Computer Vision
+opencv-python>=4.8.0
+
+# File System Monitoring
+watchdog>=3.0.0
+
+# System Control
+screen-brightness-control>=0.20.0
+
+# Utility Libraries
+python-dotenv>=1.0.0
+Pillow>=10.0.0
+
+# Windows-specific (for automation)
+pywin32>=305; sys_platform == 'win32'

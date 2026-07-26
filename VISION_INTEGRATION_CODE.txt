@@ -1,0 +1,19 @@
+# Vision Module Integration Code
+# Add this code to automation.py around line 690, before the "open google" command
+
+    # VISION MODULE - Screen Analysis
+    elif "what are you seeing" in action or "visual scanning" in action or "analyze screen" in action:
+        try:
+            speak("Analyzing screen, sir...")
+            logging.info("Vision: Analyzing screen")
+            
+            # Analyze screen with Gemini Vision
+            result = analyze_user_screen("Describe what you see on the screen in detail.")
+            
+            # Speak the result
+            speak(result)
+            logging.info(f"Vision result: {result}")
+        except Exception as e:
+            logging.error(f"Vision error: {e}")
+            speak("I encountered an error while analyzing the screen.")
+        return
