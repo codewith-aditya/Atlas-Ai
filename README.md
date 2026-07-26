@@ -43,8 +43,8 @@ To set up Atlas on your local machine, follow these steps:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/atlas-ai.git
-cd atlas-ai
+git clone https://github.com/codewith-aditya/Atlas-Ai.git
+cd Atlas-Ai
 ```
 
 ### 2. Install Dependencies
@@ -77,6 +77,26 @@ Atlas is built on a highly modular architecture:
 *   **`conversational_ai.py` (The Voice):** Handles connections to Groq/LLM endpoints and strictly enforces the Atlas persona.
 *   **`listening.py` & `speech_windows.py` (Ears & Mouth):** Manages ambient-aware microphone input and zero-latency Windows SAPI speech output.
 *   **`Gui.py` (The Face):** Renders the frameless, sci-fi desktop widget with live system telemetry.
+
+---
+
+## 🔑 The Key & Authentication System
+
+Atlas requires authentication to run. The system works as follows:
+
+1. **User Prompt:** On a fresh install, `main.py` launches a PyQt5 `SubscriptionGUI`.
+2. **Key Tiers:** Keys dictate access duration:
+   - `atlas-testing-key` (5 Minutes)
+   - `atlas-weekly-pro` (7 Days)
+   - `atlas-monthly-elite` (30 Days)
+   - `atlas-lifetime-master` (Unlimited)
+3. **Encryption Pipeline:** 
+   - The user inputs a raw string. 
+   - The system checks if it exists in the internal dictionary.
+   - If valid, the expiration date is calculated.
+   - The payload is encrypted using the symmetric `Fernet` key (`PREDEFINED_SECURITY_KEY`) and stored as binary data in `materials/system.cfg`.
+4. **Boot Check:** On subsequent boots, `main.py` decrypts `system.cfg`. If the timestamp is valid, Atlas boots. If expired, it deletes the config and prompts the user again.
+5. **API Key Integration:** The raw key is also stored in `materials/recover.txt`, which is dynamically loaded as the API key to authenticate with the LLM backend (e.g., Groq).
 
 ---
 
