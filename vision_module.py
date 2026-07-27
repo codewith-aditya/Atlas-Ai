@@ -6,7 +6,7 @@ from PIL import Image
 import io
 
 # Use the Gemini API Key we have
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyDvZiLpXWPQ1O95ob6pVOdYcw7m5OieFQ0")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 class VisionModule:
     def __init__(self):

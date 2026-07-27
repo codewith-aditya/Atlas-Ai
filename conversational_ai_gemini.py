@@ -28,7 +28,7 @@ class ConversationalAI:
     
     def __init__(self, gemini_api_key=None, language="auto"):
         """Initialize the conversational AI"""
-        self.gemini_api_key = gemini_api_key or os.getenv("GEMINI_API_KEY", "AIzaSyDvZiLpXWPQ1O95ob6pVOdYcw7m5OieFQ0")
+        self.gemini_api_key = gemini_api_key or os.getenv("GEMINI_API_KEY", "")
         
         if self.gemini_api_key:
             genai.configure(api_key=self.gemini_api_key)

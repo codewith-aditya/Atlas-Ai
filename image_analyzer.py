@@ -8,7 +8,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 # Hardcoded Google API Key
-GOOGLE_API_KEY = "AIzaSyDvZiLpXWPQ1O95ob6pVOdYcw7m5OieFQ0"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 

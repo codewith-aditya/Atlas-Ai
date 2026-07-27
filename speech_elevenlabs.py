@@ -8,7 +8,7 @@ from elevenlabs import generate, play, set_api_key, voices
 is_speaking = threading.Event()
 
 # ElevenLabs API Key (set this in environment or here)
-ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "sk_5dd70c028208e02db3a0dcfcd944115b420479c59c71885e")
+ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "")
 
 def init_tts():
     """Initialize ElevenLabs TTS"""
